@@ -69,13 +69,18 @@ spec:
         revision: RUNTIME_VERSION
         template:
           metadata:
+            labels:
+              codefresh.io/entity: "{{labels.codefresh_io_entity}}"
+              codefresh.io/internal: "{{labels.codefresh_io_internal}}"
             finalizers:
               - resources-finalizer.argocd.argoproj.io
           spec:
             destination: {}
             project: ""
             source:
-              repoURL: ""
+              repoURL: "{{srcRepoURL}}"
+              path: "{{srcRepoPath}}"
+              targetRevision: "{{srcTargetRevision}}"
               directory:
                 exclude: "{{exclude}}"
                 include: "{{include}}"
