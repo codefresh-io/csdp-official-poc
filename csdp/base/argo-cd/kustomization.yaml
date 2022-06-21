@@ -9,7 +9,7 @@ images:
   - name: quay.io/codefresh/argocd
     newTag: v2.3.4-cap-CR-12110-helm-resources-yaml
   - name: quay.io/codefresh/applicationset
-    newTag: v0.4.2
+    newTag: test-incluster-block
 
 configMapGenerator:
   - behavior: merge
